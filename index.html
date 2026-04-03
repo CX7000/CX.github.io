@@ -415,7 +415,7 @@
     }
     .projet-bloc.open .projet-body { display: block; }
 
-    /* ── ÉDITEUR DU BLOC ── */
+    /* ── ÉDITEUR DU BLOC (styles conservés pour référence) ── */
     .field-label {
       font-size: 0.63rem;
       letter-spacing: 0.16em;
@@ -657,8 +657,173 @@
     }
     .veille-full { grid-column: 1 / -1; }
 
-    /* ── FOOTER ── */
-    footer {
+    /* ── PAGE 4 — DOCUMENTATION ── */
+    #documentation { display: none; }
+    #documentation.active { display: block; }
+
+    .documentation-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 3rem 5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .documentation-layout h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .documentation-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Catégorie section */
+    .doc-category { margin-bottom: 3rem; }
+    .doc-category-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .doc-category-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Grille 3 colonnes */
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    /* Carte cliquable */
+    .doc-card {
+      display: block;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: border-color 0.25s, transform 0.2s, background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .doc-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--accent-dim);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .doc-card:hover {
+      border-color: rgba(200,169,110,0.5);
+      transform: translateY(-3px);
+    }
+    .doc-card:hover::before { opacity: 1; }
+
+    .doc-card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.9rem;
+      display: block;
+      position: relative;
+    }
+    .doc-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+      position: relative;
+    }
+    .doc-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      position: relative;
+    }
+    .doc-card-arrow {
+      position: absolute;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      font-size: 0.75rem;
+      color: var(--accent);
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .doc-card:hover .doc-card-arrow {
+      opacity: 1;
+      transform: translateX(3px);
+    }
+
+    /* Static projet styles */
+    .projet-title-static {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .projet-tag-static {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .content-static {
+      width: 100%;
+      background: #0d0d0d;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 1.6rem;
+    }
+    .links-list-static {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .static-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.45rem 1rem;
+      background: #141414;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--accent);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .static-link:hover { border-color: var(--accent); background: var(--accent-dim); }
+
+    @media (max-width: 900px) { .doc-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .doc-grid { grid-template-columns: 1fr; } .documentation-layout { padding-left: 1.5rem; padding-right: 1.5rem; } }
+
       border-top: 1px solid var(--border);
       padding: 2rem 3rem;
       display: flex;
@@ -691,6 +856,7 @@
     <button class="active" onclick="showPage('accueil', this)">Accueil</button>
     <button onclick="showPage('projet', this)">Projet</button>
     <button onclick="showPage('veille', this)">Veille</button>
+    <button onclick="showPage('documentation', this)">Documentation</button>
   </nav>
 </header>
 
@@ -741,17 +907,13 @@
     <div class="skills-grid">
       <!-- ✏️ Modifiez / ajoutez des skill-tag dans le code -->
       <div class="skill-tag">HTML / CSS</div>
-      <div class="skill-tag">JavaScript</div>
       <div class="skill-tag">Python</div>
       <div class="skill-tag">PHP</div>
-      <div class="skill-tag">SQL</div>
-      <div class="skill-tag">React</div>
       <div class="skill-tag">Linux</div>
       <div class="skill-tag">Git / GitHub</div>
       <div class="skill-tag">Réseaux</div>
       <div class="skill-tag">Cybersécurité</div>
       <div class="skill-tag">Virtualisation</div>
-      <div class="skill-tag">Figma</div>
     </div>
   </div>
 
@@ -804,7 +966,7 @@
 
   <footer>
     <p>© 2025 — CHEN Ximeng. Tous droits réservés.</p> <!-- ✏️ -->
-    <a href="mailto:votre@email.com">votre@email.com</a> <!-- ✏️ -->
+    <a href="/cdn-cgi/l/email-protection#01776e75736441646c60686d2f626e6c"><span class="__cf_email__" data-cfemail="3b4d544f495e7b5e565a525715585456">[email&#160;protected]</span></a> <!-- ✏️ -->
   </footer>
 </section>
 
@@ -840,45 +1002,38 @@
       <div class="projet-header" onclick="toggleBloc('bloc-1')">
         <div class="projet-header-left">
           <span class="projet-num">01</span>
-          <input class="projet-title-editable" type="text"
-                 value="Nom du projet" placeholder="Nom du projet"
-                 onclick="event.stopPropagation()"/>
+          <span class="projet-title-static">Nom du projet</span>
+          <!-- ✏️ Modifier le titre ici dans le code -->
         </div>
-        <input class="projet-tag" type="text" value="Web"
-               placeholder="Tag" onclick="event.stopPropagation()"/>
+        <span class="projet-tag-static">Web</span>
+        <!-- ✏️ Modifier le tag ici dans le code -->
         <div class="toggle-icon">+</div>
       </div>
 
       <div class="projet-body">
         <!-- DESCRIPTION -->
         <span class="field-label">Description du projet</span>
-        <textarea class="content-text"
-          placeholder="Décrivez votre projet : contexte, objectifs, technologies utilisées, résultats obtenus…"></textarea>
+        <p class="content-static">
+          <!-- ✏️ Décrivez votre projet ici dans le code -->
+          Décrivez votre projet : contexte, objectifs, technologies utilisées, résultats obtenus…
+        </p>
 
         <!-- PHOTOS -->
         <div class="images-section">
           <span class="field-label">Photos / Captures d'écran</span>
-          <div class="drop-zone"
-               ondragover="dragOver(event)"
-               ondragleave="dragLeave(event)"
-               ondrop="dropImages(event, 'bloc-1')">
-            <input type="file" accept="image/*" multiple
-                   onchange="addImages('bloc-1', this.files)"/>
-            <span class="drop-icon">🖼️</span>
-            <span class="drop-text">Glissez vos images ici ou <em>cliquez pour choisir</em></span>
+          <div class="images-grid" id="imgGrid-bloc-1">
+            <!-- ✏️ Ajoutez vos images ici : <div class="img-item"><img src="chemin/image.jpg" alt=""/></div> -->
           </div>
-          <div class="images-grid" id="imgGrid-bloc-1"></div>
         </div>
 
         <!-- LIENS -->
         <div class="links-section">
-          <span class="field-label">Liens (GitHub, démo, documentation…)</span>
-          <div class="links-list" id="linksList-bloc-1"></div>
-          <button class="add-link-btn" onclick="addLink('bloc-1')">＋ Ajouter un lien</button>
-        </div>
-
-        <div class="bloc-footer">
-          <button class="delete-bloc-btn" onclick="deleteBloc('bloc-1')">🗑 Supprimer ce projet</button>
+          <span class="field-label">Liens</span>
+          <div class="links-list-static" id="linksList-bloc-1">
+            <!-- ✏️ Ajoutez vos liens ici dans le code :
+            <a class="static-link" href="https://github.com/..." target="_blank">GitHub →</a>
+            -->
+          </div>
         </div>
       </div>
     </div>
@@ -888,42 +1043,33 @@
       <div class="projet-header" onclick="toggleBloc('bloc-2')">
         <div class="projet-header-left">
           <span class="projet-num">02</span>
-          <input class="projet-title-editable" type="text"
-                 value="Deuxième projet" placeholder="Nom du projet"
-                 onclick="event.stopPropagation()"/>
+          <span class="projet-title-static">Deuxième projet</span>
+          <!-- ✏️ Modifier le titre ici dans le code -->
         </div>
-        <input class="projet-tag" type="text" value="Réseau"
-               placeholder="Tag" onclick="event.stopPropagation()"/>
+        <span class="projet-tag-static">Réseau</span>
+        <!-- ✏️ Modifier le tag ici dans le code -->
         <div class="toggle-icon">+</div>
       </div>
 
       <div class="projet-body">
         <span class="field-label">Description du projet</span>
-        <textarea class="content-text"
-          placeholder="Décrivez votre projet : contexte, objectifs, technologies utilisées, résultats obtenus…"></textarea>
+        <p class="content-static">
+          <!-- ✏️ Décrivez votre projet ici dans le code -->
+          Décrivez votre projet : contexte, objectifs, technologies utilisées, résultats obtenus…
+        </p>
 
         <div class="images-section">
           <span class="field-label">Photos / Captures d'écran</span>
-          <div class="drop-zone"
-               ondragover="dragOver(event)"
-               ondragleave="dragLeave(event)"
-               ondrop="dropImages(event, 'bloc-2')">
-            <input type="file" accept="image/*" multiple
-                   onchange="addImages('bloc-2', this.files)"/>
-            <span class="drop-icon">🖼️</span>
-            <span class="drop-text">Glissez vos images ici ou <em>cliquez pour choisir</em></span>
+          <div class="images-grid" id="imgGrid-bloc-2">
+            <!-- ✏️ <div class="img-item"><img src="..." alt=""/></div> -->
           </div>
-          <div class="images-grid" id="imgGrid-bloc-2"></div>
         </div>
 
         <div class="links-section">
-          <span class="field-label">Liens (GitHub, démo, documentation…)</span>
-          <div class="links-list" id="linksList-bloc-2"></div>
-          <button class="add-link-btn" onclick="addLink('bloc-2')">＋ Ajouter un lien</button>
-        </div>
-
-        <div class="bloc-footer">
-          <button class="delete-bloc-btn" onclick="deleteBloc('bloc-2')">🗑 Supprimer ce projet</button>
+          <span class="field-label">Liens</span>
+          <div class="links-list-static" id="linksList-bloc-2">
+            <!-- ✏️ <a class="static-link" href="https://..." target="_blank">Nom du lien →</a> -->
+          </div>
         </div>
       </div>
     </div>
@@ -933,7 +1079,7 @@
 
   <footer>
     <p>© 2025 — CHEN Ximeng. Tous droits réservés.</p>
-    <a href="mailto:votre@email.com">votre@email.com</a>
+    <a href="/cdn-cgi/l/email-protection#91e7fee5e3f4d1f4fcf0f8fdbff2fefc"><span class="__cf_email__" data-cfemail="83f5ecf7f1e6c3e6eee2eaefade0ecee">[email&#160;protected]</span></a>
   </footer>
 </section>
 
@@ -1014,12 +1160,92 @@
 
   <footer>
     <p>© 2025 — CHEN Ximeng. Tous droits réservés.</p>
-    <a href="mailto:votre@email.com">votre@email.com</a>
+    <a href="/cdn-cgi/l/email-protection#e89e879c9a8da88d85898184c68b8785"><span class="__cf_email__" data-cfemail="cdbba2b9bfa88da8a0aca4a1e3aea2a0">[email&#160;protected]</span></a>
+  </footer>
+</section>
+
+<!-- ══════════════════════════ PAGE 4 — DOCUMENTATION ══════════════════════════ -->
+<section class="page" id="documentation">
+  <div class="documentation-layout">
+    <p class="section-label">Ressources</p>
+    <h2>Documentation</h2>
+    <p class="documentation-subtitle">
+      Ressources techniques, références et documentations utiles organisées par catégorie.
+      Cliquez sur une carte pour accéder à la ressource.
+      <!-- ✏️ Modifiez la description ici -->
+    </p>
+
+    <!--
+    ══════════════════════════════════════════════════
+     COMMENT AJOUTER / MODIFIER UN BLOC :
+     - Copiez un <a class="doc-card" ...> et modifiez :
+         href="https://..."   → l'URL de destination
+         .doc-card-icon       → l'émoji
+         .doc-card-title      → le titre
+         .doc-card-desc       → la description courte
+     - Pour ajouter une catégorie, copiez un .doc-category
+    ══════════════════════════════════════════════════
+    -->
+
+    <!-- CATÉGORIE 1 -->
+    <div class="doc-category">
+      <div class="doc-category-title">Systèmes &amp; Réseaux</div>
+      <div class="doc-grid">
+
+        <a class="doc-card" href="https://docs.google.com/document/d/1nPaOD8eN54Cgg1VJEBBWYdCyZrAvv7_H/edit?usp=sharing&ouid=108328639416386140881&rtpof=true&sd=true" target="_blank" rel="noopener">
+          <span class="doc-card-icon">🖥</span>
+          <div class="doc-card-title">Proxmox</div>
+          <p class="doc-card-desc">Documentation de Proxmox.</p>
+          <span class="doc-card-arrow">→</span>
+        </a>
+
+        <a class="doc-card" href="https://docs.google.com/document/d/1Wv3uL0VP2PJI6oGAwaYPgkEehlYUtFwJ/edit?usp=sharing&ouid=108328639416386140881&rtpof=true&sd=true" target="_blank" rel="noopener">
+          <span class="doc-card-icon">🎫</span>
+          <div class="doc-card-title">GLPI</div>
+          <p class="doc-card-desc">Documentation de GLPI.</p>
+          <span class="doc-card-arrow">→</span>
+        </a>
+
+        <a class="doc-card" href="https://docs.google.com/document/d/1Wv3uL0VP2PJI6oGAwaYPgkEehlYUtFwJ/edit?usp=sharing&ouid=108328639416386140881&rtpof=true&sd=true" target="_blank" rel="noopener">
+          <span class="doc-card-icon">🔎</span>
+          <div class="doc-card-title">Zabbix</div>
+          <p class="doc-card-desc">Documentation de Zabbix.</p>
+          <span class="doc-card-arrow">→</span>
+        </a>
+
+        <a class="doc-card" href="https://docs.google.com/document/d/1oaAr_cDu7mXJTeibDMH8uOG38kT8KseF/edit?usp=drive_link&ouid=108328639416386140881&rtpof=true&sd=true" target="_blank" rel="noopener">
+          <span class="doc-card-icon">⚙️</span>
+          <div class="doc-card-title">Windows Serveur 2022</div>
+          <p class="doc-card-desc">Documentation de Windows Serveur 2022.</p>
+          <span class="doc-card-arrow">→</span>
+        </a>
+
+        <a class="doc-card" href="https://docs.google.com/document/d/1zpvINf-mzwWupRvIDX0jNrOG_jipk3BN/edit?usp=drive_link&ouid=108328639416386140881&rtpof=true&sd=true" target="_blank" rel="noopener">
+          <span class="doc-card-icon">🛡️</span>
+          <div class="doc-card-title">Pfsense</div>
+          <p class="doc-card-desc">Documentation de Pfsense.</p>
+          <span class="doc-card-arrow">→</span>
+        </a>
+
+        <a class="doc-card" href="https://docs.google.com/document/d/1JErXKIyIvdfBWTRv-880FpCi7quvhaux/edit?usp=drive_link&ouid=108328639416386140881&rtpof=true&sd=true" target="_blank" rel="noopener">
+          <span class="doc-card-icon">📧</span>
+          <div class="doc-card-title">IRedMail</div>
+          <p class="doc-card-desc">Documentation de IRedMail.</p>
+          <span class="doc-card-arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 — CHEN Ximeng. Tous droits réservés.</p>
+    <a href="mailto:votre@email.fr">votre@email.fr</a>
   </footer>
 </section>
 
 <!-- ══════════════════════════ JAVASCRIPT ══════════════════════════ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
   /* ─────────────────────────────────────────
      NAVIGATION
@@ -1033,136 +1259,11 @@
   }
 
   /* ─────────────────────────────────────────
-     ACCORDÉON
+     ACCORDÉON PROJETS
   ───────────────────────────────────────── */
   function toggleBloc(id) {
     document.getElementById(id).classList.toggle('open');
   }
-
-  function deleteBloc(id) {
-    if (confirm('Supprimer ce projet ?')) {
-      localStorage.removeItem('projet_' + id);
-      document.getElementById(id).remove();
-    }
-  }
-
-  /* ─────────────────────────────────────────
-     PHOTOS — upload & drag-and-drop
-  ───────────────────────────────────────── */
-  function dragOver(e) {
-    e.preventDefault();
-    e.currentTarget.classList.add('drag-over');
-  }
-  function dragLeave(e) {
-    e.currentTarget.classList.remove('drag-over');
-  }
-  function dropImages(e, blocId) {
-    e.preventDefault();
-    e.currentTarget.classList.remove('drag-over');
-    addImages(blocId, e.dataTransfer.files);
-  }
-
-  function addImages(blocId, files) {
-    const grid = document.getElementById('imgGrid-' + blocId);
-    Array.from(files).forEach(file => {
-      if (!file.type.startsWith('image/')) return;
-      const reader = new FileReader();
-      reader.onload = ev => {
-        const item = document.createElement('div');
-        item.className = 'img-item';
-
-        const img = document.createElement('img');
-        img.src = ev.target.result;
-        img.alt = file.name;
-
-        const btn = document.createElement('button');
-        btn.className = 'img-del';
-        btn.textContent = '✕';
-        btn.title = 'Supprimer cette image';
-        btn.onclick = () => item.remove();
-
-        item.appendChild(img);
-        item.appendChild(btn);
-        grid.appendChild(item);
-      };
-      reader.readAsDataURL(file);
-    });
-  }
-
-  /* ─────────────────────────────────────────
-     LIENS
-  ───────────────────────────────────────── */
-  function addLink(blocId, label, url) {
-    const list = document.getElementById('linksList-' + blocId);
-    const row  = document.createElement('div');
-    row.className = 'link-row';
-    row.innerHTML = `
-      <input class="link-label-input" type="text"
-             value="${escHtml(label || '')}" placeholder="Nom (ex: GitHub)" />
-      <input class="link-url-input" type="url"
-             value="${escHtml(url || '')}" placeholder="https://…" />
-      <button class="link-remove" title="Supprimer ce lien"
-              onclick="this.closest('.link-row').remove()">✕</button>
-    `;
-    list.appendChild(row);
-    if (!label) row.querySelector('.link-label-input').focus();
-    row.querySelectorAll('input').forEach(i => i.addEventListener('input', () => saveBloc(blocId)));
-  }
-
-  /* ─────────────────────────────────────────
-     SAUVEGARDE AUTOMATIQUE (texte + liens)
-     Les images ne sont PAS sauvegardées car
-     elles peuvent être très lourdes. Rechargez
-     la page et re-uploadez les photos.
-  ───────────────────────────────────────── */
-  document.addEventListener('input', e => {
-    const bloc = e.target.closest('.projet-bloc');
-    if (bloc) saveBloc(bloc.id);
-  });
-
-  function saveBloc(blocId) {
-    const bloc = document.getElementById(blocId);
-    if (!bloc) return;
-    const data = {
-      title: bloc.querySelector('.projet-title-editable')?.value || '',
-      tag:   bloc.querySelector('.projet-tag')?.value || '',
-      desc:  bloc.querySelector('.content-text')?.value || '',
-      links: []
-    };
-    bloc.querySelectorAll('.link-row').forEach(row => {
-      data.links.push({
-        label: row.querySelector('.link-label-input')?.value || '',
-        url:   row.querySelector('.link-url-input')?.value   || ''
-      });
-    });
-    try { localStorage.setItem('projet_' + blocId, JSON.stringify(data)); } catch(e) {}
-  }
-
-  function restoreBloc(blocId) {
-    let raw;
-    try { raw = localStorage.getItem('projet_' + blocId); } catch(e) { return; }
-    if (!raw) return;
-    try {
-      const d    = JSON.parse(raw);
-      const bloc = document.getElementById(blocId);
-      if (!bloc) return;
-      if (d.title) bloc.querySelector('.projet-title-editable').value = d.title;
-      if (d.tag)   bloc.querySelector('.projet-tag').value            = d.tag;
-      if (d.desc)  bloc.querySelector('.content-text').value          = d.desc;
-      (d.links || []).forEach(l => addLink(blocId, l.label, l.url));
-    } catch(e) {}
-  }
-
-  function escHtml(s) {
-    return String(s)
-      .replace(/&/g,'&amp;')
-      .replace(/"/g,'&quot;')
-      .replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;');
-  }
-
-  // Restaurer toutes les données au chargement de la page
-  document.querySelectorAll('.projet-bloc').forEach(b => restoreBloc(b.id));
 
 </script>
 </body>
