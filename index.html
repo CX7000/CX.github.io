@@ -42,21 +42,15 @@
       padding: 0 3rem;
       height: 64px;
     }
-
     .logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
       font-weight: 700;
       letter-spacing: 0.02em;
       color: var(--white);
-      /* ✏️ MODIFIEZ LE NOM ICI */
-      /* Remplacez "Portfolio" par votre nom */
     }
-
     .logo span { color: var(--accent); }
-
     nav { display: flex; gap: 0.5rem; }
-
     nav button {
       background: none;
       border: none;
@@ -72,7 +66,6 @@
       transition: all 0.25s;
       position: relative;
     }
-
     nav button::after {
       content: '';
       position: absolute;
@@ -81,7 +74,6 @@
       background: var(--accent);
       transition: all 0.25s;
     }
-
     nav button:hover { color: var(--white); }
     nav button:hover::after { left: 1.2rem; right: 1.2rem; }
     nav button.active { color: var(--white); }
@@ -92,11 +84,7 @@
     .page.active { display: block; }
 
     /* ── PAGE 1 — ACCUEIL ── */
-    #accueil {
-      display: none;
-      position: relative;
-      overflow: hidden;
-    }
+    #accueil { display: none; position: relative; overflow: hidden; }
     #accueil.active { display: flex; flex-direction: column; }
 
     .hero {
@@ -107,17 +95,13 @@
       padding: 6rem 3rem 4rem;
       position: relative;
     }
-
     .hero-bg {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background:
         radial-gradient(ellipse 60% 50% at 80% 50%, rgba(200,169,110,0.07) 0%, transparent 70%),
         radial-gradient(ellipse 40% 60% at 10% 80%, rgba(200,169,110,0.04) 0%, transparent 60%);
       pointer-events: none;
     }
-
-    /* Decorative lines */
     .hero-bg::before {
       content: '';
       position: absolute;
@@ -126,12 +110,7 @@
       background: linear-gradient(to bottom, transparent, var(--accent), transparent);
       opacity: 0.4;
     }
-
-    .hero-content {
-      max-width: 700px;
-      position: relative;
-      animation: fadeUp 0.8s ease both;
-    }
+    .hero-content { max-width: 700px; position: relative; animation: fadeUp 0.8s ease both; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
@@ -148,14 +127,12 @@
       align-items: center;
       gap: 0.8rem;
     }
-
     .hero-eyebrow::before {
       content: '';
       display: inline-block;
       width: 32px; height: 1px;
       background: var(--accent);
     }
-
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(3rem, 7vw, 5.5rem);
@@ -163,23 +140,15 @@
       line-height: 1.05;
       margin-bottom: 1.5rem;
     }
-
-    h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
+    h1 em { font-style: italic; color: var(--accent); }
     .hero-sub {
       font-size: 1.05rem;
       color: var(--text-muted);
       line-height: 1.7;
       max-width: 480px;
       margin-bottom: 2.5rem;
-      /* ✏️ MODIFIEZ VOTRE DESCRIPTION ICI */
     }
-
     .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -196,47 +165,28 @@
       text-decoration: none;
       transition: all 0.25s;
     }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #000;
-    }
+    .btn-primary { background: var(--accent); color: #000; }
     .btn-primary:hover { background: #d4b87a; transform: translateY(-2px); }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border: 1px solid var(--border);
-    }
+    .btn-outline { background: transparent; color: var(--white); border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
-    /* Stats row */
+    /* Stats */
     .stats {
       display: flex;
-      gap: 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       padding: 2.5rem 3rem;
       background: rgba(255,255,255,0.02);
     }
-
-    .stat {
-      flex: 1;
-      text-align: center;
-      padding: 0 2rem;
-      border-right: 1px solid var(--border);
-    }
+    .stat { flex: 1; text-align: center; padding: 0 2rem; border-right: 1px solid var(--border); }
     .stat:last-child { border-right: none; }
-
     .stat-number {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 700;
       color: var(--accent);
       display: block;
-      /* ✏️ MODIFIEZ VOS CHIFFRES ICI */
     }
-
     .stat-label {
       font-size: 0.75rem;
       letter-spacing: 0.12em;
@@ -246,13 +196,8 @@
       display: block;
     }
 
-    /* Skills section */
-    .section {
-      padding: 5rem 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
+    /* Skills */
+    .section { padding: 5rem 3rem; max-width: 1100px; margin: 0 auto; }
     .section-label {
       font-size: 0.7rem;
       letter-spacing: 0.2em;
@@ -270,13 +215,11 @@
       background: var(--border);
       max-width: 200px;
     }
-
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
     }
-
     .skill-tag {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -286,9 +229,72 @@
       color: var(--text-muted);
       transition: all 0.2s;
       cursor: default;
-      /* ✏️ MODIFIEZ VOS COMPÉTENCES ICI */
     }
     .skill-tag:hover { border-color: var(--accent); color: var(--white); }
+
+    /* Formation */
+    .formation-section { padding: 0 3rem 5rem; max-width: 1100px; margin: 0 auto; }
+    .formation-block { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .formation-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem;
+      transition: border-color 0.25s;
+    }
+    .formation-card:hover { border-color: rgba(200,169,110,0.3); }
+    .formation-card.wide {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .formation-badge {
+      background: var(--accent-dim);
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 4px;
+      padding: 0.9rem 1.2rem;
+      text-align: center;
+    }
+    .formation-badge-label {
+      display: block;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .formation-badge-title {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .formation-badge-sub {
+      display: block;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      letter-spacing: 0.05em;
+    }
+    .formation-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+    .formation-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.75; }
+    .formation-card-cat {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
 
     /* ── PAGE 2 — PROJETS ── */
     #projet { display: none; }
@@ -300,7 +306,6 @@
       margin: 0 auto;
       animation: fadeUp 0.6s ease both;
     }
-
     .projet-intro h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
@@ -308,13 +313,11 @@
       margin-bottom: 1rem;
       line-height: 1.15;
     }
-
-    .projet-intro p {
+    .projet-intro > p {
       color: var(--text-muted);
       line-height: 1.75;
       font-size: 1rem;
       max-width: 600px;
-      /* ✏️ MODIFIEZ CE TEXTE */
     }
 
     .projets-container {
@@ -326,7 +329,7 @@
       gap: 1rem;
     }
 
-    /* Accordion / Bloc projet */
+    /* Accordéon */
     .projet-bloc {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -346,7 +349,6 @@
       user-select: none;
       gap: 1rem;
     }
-
     .projet-header-left {
       display: flex;
       align-items: center;
@@ -354,7 +356,6 @@
       flex: 1;
       min-width: 0;
     }
-
     .projet-num {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
@@ -362,7 +363,6 @@
       opacity: 0.6;
       flex-shrink: 0;
     }
-
     .projet-title-editable {
       font-size: 1.05rem;
       font-weight: 500;
@@ -375,7 +375,6 @@
       cursor: text;
     }
     .projet-title-editable:focus { color: var(--accent); }
-
     .projet-tag {
       font-size: 0.7rem;
       letter-spacing: 0.1em;
@@ -389,10 +388,9 @@
       outline: none;
       font-family: 'DM Sans', sans-serif;
       cursor: text;
-      /* ✏️ Étiquette modifiable */
+      min-width: 40px;
     }
     .projet-tag:focus { outline: 1px solid var(--accent); }
-
     .toggle-icon {
       width: 28px; height: 28px;
       border-radius: 50%;
@@ -401,15 +399,15 @@
       flex-shrink: 0;
       transition: all 0.3s;
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: 1.1rem;
       line-height: 1;
+      pointer-events: none;
     }
     .projet-bloc.open .toggle-icon {
       border-color: var(--accent);
       color: var(--accent);
       transform: rotate(45deg);
     }
-
     .projet-body {
       display: none;
       padding: 0 1.8rem 1.8rem;
@@ -417,104 +415,154 @@
     }
     .projet-bloc.open .projet-body { display: block; }
 
-    /* Contenu interne du bloc */
-    .content-area {
-      background: #0d0d0d;
-      border: 1px dashed var(--border);
-      border-radius: 4px;
-      padding: 1.5rem;
-      min-height: 120px;
-      margin-bottom: 1rem;
+    /* ── ÉDITEUR DU BLOC ── */
+    .field-label {
+      font-size: 0.63rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.55rem;
     }
 
     .content-text {
       width: 100%;
-      background: none;
-      border: none;
-      outline: none;
+      background: #0d0d0d;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
       color: var(--text-muted);
       font-family: 'DM Sans', sans-serif;
       font-size: 0.92rem;
       line-height: 1.7;
       resize: vertical;
-      min-height: 80px;
-      /* ✏️ Zone de texte libre */
+      min-height: 100px;
+      outline: none;
+      transition: border-color 0.2s, color 0.2s;
+      margin-bottom: 1.6rem;
     }
-    .content-text::placeholder { color: #444; }
+    .content-text:focus { border-color: rgba(200,169,110,0.4); color: var(--white); }
+    .content-text::placeholder { color: #333; }
 
-    /* Images dans le bloc */
-    .images-row {
-      display: flex;
-      flex-wrap: wrap;
+    /* Zone d'upload photos */
+    .images-section { margin-bottom: 1.6rem; }
+
+    .drop-zone {
+      position: relative;
+      border: 2px dashed var(--border);
+      border-radius: 6px;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s;
+      background: #0d0d0d;
+    }
+    .drop-zone:hover, .drop-zone.drag-over {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .drop-zone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+    .drop-icon { font-size: 1.8rem; display: block; margin-bottom: 0.5rem; }
+    .drop-text { font-size: 0.82rem; color: var(--text-muted); }
+    .drop-text em { color: var(--accent); font-style: normal; }
+
+    .images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
       gap: 0.75rem;
-      margin-bottom: 1rem;
+      margin-top: 0.9rem;
     }
-
-    .img-thumb {
-      width: 120px;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 3px;
+    .img-item {
+      position: relative;
+      aspect-ratio: 4/3;
+      border-radius: 4px;
+      overflow: hidden;
       border: 1px solid var(--border);
     }
-
-    .img-placeholder {
-      width: 120px; height: 90px;
-      border-radius: 3px;
-      border: 1px dashed var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #444;
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
+    .img-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .img-del {
+      position: absolute;
+      top: 4px; right: 4px;
+      background: rgba(0,0,0,0.8);
+      border: none;
+      border-radius: 50%;
+      width: 22px; height: 22px;
+      color: #fff;
+      font-size: 0.65rem;
       cursor: pointer;
-      transition: border-color 0.2s;
-      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity 0.2s;
+      display: flex; align-items: center; justify-content: center;
     }
-    .img-placeholder:hover { border-color: var(--accent); color: var(--accent); }
+    .img-item:hover .img-del { opacity: 1; }
 
-    /* Liens dans le bloc */
-    .links-section { margin-top: 0.5rem; }
+    /* Zone liens */
+    .links-section { margin-bottom: 1.6rem; }
+    .links-list { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.75rem; }
 
-    .link-item {
+    .link-row {
       display: flex;
-      align-items: center;
       gap: 0.5rem;
-      margin-bottom: 0.5rem;
+      align-items: center;
     }
+    .link-label-input {
+      width: 140px;
+      flex-shrink: 0;
+      background: #0d0d0d;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.5rem 0.75rem;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .link-label-input:focus { border-color: rgba(200,169,110,0.4); }
+    .link-label-input::placeholder { color: #333; }
 
-    .link-input {
+    .link-url-input {
       flex: 1;
       background: #0d0d0d;
       border: 1px solid var(--border);
       border-radius: 3px;
-      padding: 0.5rem 0.8rem;
+      padding: 0.5rem 0.75rem;
       color: var(--accent);
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       outline: none;
       transition: border-color 0.2s;
     }
-    .link-input:focus { border-color: var(--accent); }
-    .link-input::placeholder { color: #444; }
+    .link-url-input:focus { border-color: rgba(200,169,110,0.4); }
+    .link-url-input::placeholder { color: #333; }
 
-    /* Toolbar du bloc */
-    .bloc-toolbar {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid var(--border);
-      flex-wrap: wrap;
+    .link-remove {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text-muted);
+      width: 28px; height: 28px;
+      flex-shrink: 0;
+      cursor: pointer;
+      font-size: 0.75rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
     }
+    .link-remove:hover { border-color: #c25; color: #c25; }
 
-    .tool-btn {
+    .add-link-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      padding: 0.4rem 0.9rem;
-      background: #1a1a1a;
+      padding: 0.45rem 1rem;
+      background: #141414;
       border: 1px solid var(--border);
       border-radius: 3px;
       color: var(--text-muted);
@@ -525,71 +573,57 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    .tool-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .add-link-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-    .tool-btn.danger:hover { border-color: #c25; color: #c25; }
-
-    /* Add project button */
-    .add-projet-btn {
+    /* Bas du bloc */
+    .bloc-footer {
       display: flex;
+      justify-content: flex-end;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      margin-top: 0.2rem;
+    }
+    .delete-bloc-btn {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      padding: 1.1rem;
-      background: transparent;
-      border: 1px dashed var(--border);
-      border-radius: 6px;
-      color: var(--text-muted);
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: #555;
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: all 0.25s;
-      width: 100%;
+      transition: all 0.2s;
     }
-    .add-projet-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .delete-bloc-btn:hover { border-color: #c25; color: #c25; }
 
     /* ── PAGE 3 — VEILLE ── */
     #veille { display: none; }
     #veille.active { display: block; }
-
     .veille-layout {
       max-width: 900px;
       margin: 0 auto;
       padding: 4rem 3rem 5rem;
       animation: fadeUp 0.6s ease both;
     }
-
     .veille-layout h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700;
       margin-bottom: 0.75rem;
     }
-
     .veille-subtitle {
       color: var(--text-muted);
       font-size: 0.95rem;
       margin-bottom: 3rem;
       padding-bottom: 2rem;
       border-bottom: 1px solid var(--border);
-      /* ✏️ MODIFIEZ LE SOUS-TITRE */
     }
-
-    .veille-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-    }
-
-    @media (max-width: 640px) {
-      .veille-grid { grid-template-columns: 1fr; }
-      nav button { padding: 0.4rem 0.8rem; }
-      .hero, .section, .projet-intro, .projets-container, .veille-layout { padding-left: 1.5rem; padding-right: 1.5rem; }
-      .stats { padding: 1.5rem; }
-    }
-
+    .veille-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
     .veille-card {
       padding: 2rem;
       background: var(--card-bg);
@@ -598,32 +632,21 @@
       transition: border-color 0.25s;
     }
     .veille-card:hover { border-color: rgba(200,169,110,0.3); }
-
     .veille-card-cat {
       font-size: 0.65rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 0.9rem;
-      /* ✏️ CATÉGORIE */
     }
-
     .veille-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
       line-height: 1.3;
-      /* ✏️ TITRE DE LA SECTION */
     }
-
-    .veille-card p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      /* ✏️ CONTENU LIBRE */
-    }
-
+    .veille-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
     .veille-card-date {
       margin-top: 1.5rem;
       padding-top: 1rem;
@@ -631,15 +654,8 @@
       font-size: 0.72rem;
       letter-spacing: 0.08em;
       color: #555;
-      /* ✏️ DATE */
     }
-
-    .veille-full {
-      grid-column: 1 / -1;
-    }
-
-    /* hidden file input */
-    .hidden-file { display: none; }
+    .veille-full { grid-column: 1 / -1; }
 
     /* ── FOOTER ── */
     footer {
@@ -650,19 +666,19 @@
       justify-content: space-between;
       background: #000;
     }
+    footer p { font-size: 0.75rem; color: #444; letter-spacing: 0.05em; }
+    footer a { font-size: 0.75rem; color: var(--accent); text-decoration: none; letter-spacing: 0.05em; }
 
-    footer p {
-      font-size: 0.75rem;
-      color: #444;
-      letter-spacing: 0.05em;
-      /* ✏️ MODIFIEZ LE COPYRIGHT */
-    }
-
-    footer a {
-      font-size: 0.75rem;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 0.05em;
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      header { padding: 0 1.5rem; }
+      nav button { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+      .hero, .section, .formation-section, .projet-intro, .projets-container, .veille-layout { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .stats { padding: 1.5rem; }
+      .formation-block, .veille-grid { grid-template-columns: 1fr; }
+      .formation-card.wide { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .link-label-input { width: 100px; }
     }
   </style>
 </head>
@@ -670,10 +686,7 @@
 
 <!-- ══════════════════════════ HEADER ══════════════════════════ -->
 <header>
-  <div class="logo">
-    Mon<span>.</span>Portfolio
-    <!-- ✏️ Changez "Mon.Portfolio" par votre prénom/nom -->
-  </div>
+  <div class="logo">Mon<span>.</span>Portfolio</div> <!-- ✏️ Votre nom -->
   <nav>
     <button class="active" onclick="showPage('accueil', this)">Accueil</button>
     <button onclick="showPage('projet', this)">Projet</button>
@@ -687,12 +700,11 @@
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Portfolio 2025</p><!-- ✏️ -->
-      <h1>Bonjour, je suis<br><em>Votre Nom</em></h1><!-- ✏️ -->
+      <p class="hero-eyebrow">Portfolio 2025</p>
+      <h1>Bonjour, je suis<br><em>CHEN Ximeng</em></h1> <!-- ✏️ -->
       <p class="hero-sub">
-        Étudiant en BTS SIO / Développeur passionné, je crée des expériences numériques
-        soignées et fonctionnelles. Bienvenue dans mon espace.
-        <!-- ✏️ Remplacez cette description par la vôtre -->
+        Étudiant en BTS SIO, dans laquelle je suis en SISR qui est une formation spécifique
+        <!-- ✏️ Complétez votre description -->
       </p>
       <div class="btn-group">
         <button class="btn btn-primary" onclick="showPage('projet', document.querySelectorAll('nav button')[1])">
@@ -707,27 +719,27 @@
 
   <div class="stats">
     <div class="stat">
-      <span class="stat-number">12</span><!-- ✏️ -->
-      <span class="stat-label">Projets réalisés</span><!-- ✏️ -->
+      <span class="stat-number">12</span> <!-- ✏️ -->
+      <span class="stat-label">Projets réalisés</span>
     </div>
     <div class="stat">
-      <span class="stat-number">2</span><!-- ✏️ -->
-      <span class="stat-label">Ans d'expérience</span><!-- ✏️ -->
+      <span class="stat-number">2</span>
+      <span class="stat-label">Ans d'expérience</span>
     </div>
     <div class="stat">
-      <span class="stat-number">8</span><!-- ✏️ -->
-      <span class="stat-label">Technologies maîtrisées</span><!-- ✏️ -->
+      <span class="stat-number">8</span>
+      <span class="stat-label">Technologies maîtrisées</span>
     </div>
     <div class="stat">
-      <span class="stat-number">100%</span><!-- ✏️ -->
-      <span class="stat-label">Investissement</span><!-- ✏️ -->
+      <span class="stat-number">100%</span>
+      <span class="stat-label">Investissement</span>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-label">Compétences</div><!-- ✏️ -->
+    <div class="section-label">Compétences</div>
     <div class="skills-grid">
-      <!-- ✏️ Ajoutez / supprimez / modifiez les compétences -->
+      <!-- ✏️ Modifiez / ajoutez des skill-tag dans le code -->
       <div class="skill-tag">HTML / CSS</div>
       <div class="skill-tag">JavaScript</div>
       <div class="skill-tag">Python</div>
@@ -744,53 +756,46 @@
   </div>
 
   <div class="formation-section">
-    <div class="section-label">Formation</div><!-- ✏️ -->
+    <div class="section-label">Formation</div>
     <div class="formation-block">
 
-      <!-- Carte principale — présentation du BTS -->
       <div class="formation-card wide">
         <div class="formation-badge">
           <span class="formation-badge-label">Diplôme</span>
           <span class="formation-badge-title">BTS</span>
-          <span class="formation-badge-sub">SIO · 2 ans</span><!-- ✏️ -->
+          <span class="formation-badge-sub">SIO · 2 ans</span>
         </div>
         <div>
-          <div class="formation-card-cat">Présentation de la formation</div><!-- ✏️ -->
-          <h3>BTS Services Informatiques aux Organisations</h3><!-- ✏️ -->
+          <div class="formation-card-cat">Présentation de la formation</div>
+          <h3>BTS Services Informatiques aux Organisations</h3>
           <p>
-            Le BTS SIO est une formation de niveau Bac+2 qui prépare aux métiers de
-            l'informatique. Elle se décline en deux options : <strong style="color:var(--white)">SLAM</strong>
+            Le BTS SIO est une formation de niveau Bac+2 qui prépare aux métiers de l'informatique.
+            Elle se décline en deux options : <strong style="color:var(--white)">SLAM</strong>
             (Solutions Logicielles et Applications Métiers) orientée développement logiciel,
             et <strong style="color:var(--white)">SISR</strong> (Solutions d'Infrastructure, Systèmes et Réseaux)
             orientée administration des systèmes et réseaux. La formation alterne cours théoriques,
             travaux pratiques et périodes de stage en entreprise.
-            <!-- ✏️ Modifiez cette description selon votre option -->
           </p>
         </div>
       </div>
 
-      <!-- Carte option choisie -->
       <div class="formation-card">
-        <div class="formation-card-cat">Mon option</div><!-- ✏️ -->
-        <h3>Option SLAM</h3><!-- ✏️ Changez en SISR si besoin -->
+        <div class="formation-card-cat">Mon option</div>
+        <h3>Option SISR</h3> <!-- ✏️ SLAM ou SISR -->
         <p>
-          L'option SLAM forme au développement d'applications, à la conception de bases
-          de données, et à l'intégration de solutions logicielles. Elle couvre la
-          programmation orientée objet, le développement web, mobile, ainsi que la
-          gestion de projets informatiques.
-          <!-- ✏️ Décrivez votre option -->
+          L'option SISR forme à l'administration des systèmes, la gestion des réseaux, la
+          virtualisation et la cybersécurité. Elle prépare aux métiers d'administrateur
+          systèmes et réseaux, technicien infrastructure et responsable sécurité informatique.
         </p>
       </div>
 
-      <!-- Carte débouchés / objectifs -->
       <div class="formation-card">
-        <div class="formation-card-cat">Débouchés</div><!-- ✏️ -->
-        <h3>Poursuite d'études &amp; métiers visés</h3><!-- ✏️ -->
+        <div class="formation-card-cat">Débouchés</div>
+        <h3>Poursuite d'études &amp; métiers visés</h3>
         <p>
-          Le BTS SIO ouvre la voie à des licences professionnelles, des bachelors
-          informatique ou directement à des postes de développeur, technicien réseau,
-          administrateur systèmes ou consultant en cybersécurité selon l'option choisie.
-          <!-- ✏️ Vos projets post-BTS -->
+          Le BTS SIO ouvre la voie à des licences professionnelles, des bachelors informatique
+          ou directement à des postes de technicien réseau, administrateur systèmes ou
+          consultant en cybersécurité selon l'option choisie.
         </p>
       </div>
 
@@ -798,8 +803,8 @@
   </div>
 
   <footer>
-    <p>© 2025 — Votre Nom. Tous droits réservés.</p><!-- ✏️ -->
-    <a href="mailto:votre@email.com">votre@email.com</a><!-- ✏️ -->
+    <p>© 2025 — CHEN Ximeng. Tous droits réservés.</p> <!-- ✏️ -->
+    <a href="mailto:votre@email.com">votre@email.com</a> <!-- ✏️ -->
   </footer>
 </section>
 
@@ -808,91 +813,126 @@
 
   <div class="projet-intro">
     <p class="section-label">Mes réalisations</p>
-    <h2>Projets &amp; Travaux</h2><!-- ✏️ -->
+    <h2>Projets &amp; Travaux</h2>
     <p>
-      Voici une sélection de mes projets personnels et scolaires. Cliquez sur chaque bloc
-      pour le développer et découvrir les détails, captures d'écran et liens associés.
-      <!-- ✏️ Modifiez ce texte introductif -->
+      Cliquez sur un bloc pour l'ouvrir. Remplissez la description, glissez vos photos et
+      ajoutez vos liens directement depuis le navigateur. Le texte et les liens sont
+      sauvegardés automatiquement.
     </p>
   </div>
 
   <div class="projets-container" id="projetsContainer">
 
-    <!-- ✏️ BLOC PROJET — vous pouvez dupliquer ce bloc autant de fois que voulu -->
+    <!--
+    ══════════════════════════════════════════════════
+     BLOC PROJET
+     Pour en ajouter un dans VS Code :
+      1. Copiez tout depuis <div class="projet-bloc"...>
+         jusqu'au commentaire FIN BLOC correspondant
+      2. Collez-le après le dernier bloc
+      3. Changez l'id (ex: id="bloc-3")
+      4. Changez le numéro affiché (03, 04…)
+      5. Changez le value du titre et du tag
+    ══════════════════════════════════════════════════
+    -->
+
     <div class="projet-bloc" id="bloc-1">
       <div class="projet-header" onclick="toggleBloc('bloc-1')">
         <div class="projet-header-left">
           <span class="projet-num">01</span>
-          <input class="projet-title-editable" type="text" value="Nom du projet" placeholder="Nom du projet"
+          <input class="projet-title-editable" type="text"
+                 value="Nom du projet" placeholder="Nom du projet"
                  onclick="event.stopPropagation()"/>
         </div>
-        <input class="projet-tag" type="text" value="Web" placeholder="Tag"
-               onclick="event.stopPropagation()"/>
+        <input class="projet-tag" type="text" value="Web"
+               placeholder="Tag" onclick="event.stopPropagation()"/>
         <div class="toggle-icon">+</div>
       </div>
+
       <div class="projet-body">
-        <div class="content-area">
-          <textarea class="content-text" placeholder="Décrivez votre projet ici : contexte, objectifs, technologies utilisées, résultats…">
-          </textarea>
-        </div>
-        <div class="images-row" id="images-bloc-1">
-          <div class="img-placeholder" onclick="triggerUpload('bloc-1')">+ Photo</div>
-        </div>
-        <input type="file" accept="image/*" class="hidden-file" id="file-bloc-1" multiple
-               onchange="handleImages('bloc-1', this)"/>
-        <div class="links-section" id="links-bloc-1">
-          <div class="link-item">
-            <input class="link-input" type="url" placeholder="https://lien-vers-le-projet.com"/>
+        <!-- DESCRIPTION -->
+        <span class="field-label">Description du projet</span>
+        <textarea class="content-text"
+          placeholder="Décrivez votre projet : contexte, objectifs, technologies utilisées, résultats obtenus…"></textarea>
+
+        <!-- PHOTOS -->
+        <div class="images-section">
+          <span class="field-label">Photos / Captures d'écran</span>
+          <div class="drop-zone"
+               ondragover="dragOver(event)"
+               ondragleave="dragLeave(event)"
+               ondrop="dropImages(event, 'bloc-1')">
+            <input type="file" accept="image/*" multiple
+                   onchange="addImages('bloc-1', this.files)"/>
+            <span class="drop-icon">🖼️</span>
+            <span class="drop-text">Glissez vos images ici ou <em>cliquez pour choisir</em></span>
           </div>
+          <div class="images-grid" id="imgGrid-bloc-1"></div>
         </div>
-        <div class="bloc-toolbar">
-          <button class="tool-btn" onclick="triggerUpload('bloc-1')">📷 Ajouter photo</button>
-          <button class="tool-btn" onclick="addLink('bloc-1')">🔗 Ajouter lien</button>
-          <button class="tool-btn danger" onclick="deleteBloc('bloc-1')">🗑 Supprimer</button>
+
+        <!-- LIENS -->
+        <div class="links-section">
+          <span class="field-label">Liens (GitHub, démo, documentation…)</span>
+          <div class="links-list" id="linksList-bloc-1"></div>
+          <button class="add-link-btn" onclick="addLink('bloc-1')">＋ Ajouter un lien</button>
+        </div>
+
+        <div class="bloc-footer">
+          <button class="delete-bloc-btn" onclick="deleteBloc('bloc-1')">🗑 Supprimer ce projet</button>
         </div>
       </div>
     </div>
-    <!-- FIN BLOC PROJET -->
+    <!-- FIN BLOC 1 -->
 
     <div class="projet-bloc" id="bloc-2">
       <div class="projet-header" onclick="toggleBloc('bloc-2')">
         <div class="projet-header-left">
           <span class="projet-num">02</span>
-          <input class="projet-title-editable" type="text" value="Deuxième projet" placeholder="Nom du projet"
+          <input class="projet-title-editable" type="text"
+                 value="Deuxième projet" placeholder="Nom du projet"
                  onclick="event.stopPropagation()"/>
         </div>
-        <input class="projet-tag" type="text" value="Réseau" placeholder="Tag"
-               onclick="event.stopPropagation()"/>
+        <input class="projet-tag" type="text" value="Réseau"
+               placeholder="Tag" onclick="event.stopPropagation()"/>
         <div class="toggle-icon">+</div>
       </div>
+
       <div class="projet-body">
-        <div class="content-area">
-          <textarea class="content-text" placeholder="Décrivez votre projet ici…">
-          </textarea>
-        </div>
-        <div class="images-row" id="images-bloc-2">
-          <div class="img-placeholder" onclick="triggerUpload('bloc-2')">+ Photo</div>
-        </div>
-        <input type="file" accept="image/*" class="hidden-file" id="file-bloc-2" multiple
-               onchange="handleImages('bloc-2', this)"/>
-        <div class="links-section" id="links-bloc-2">
-          <div class="link-item">
-            <input class="link-input" type="url" placeholder="https://lien-vers-le-projet.com"/>
+        <span class="field-label">Description du projet</span>
+        <textarea class="content-text"
+          placeholder="Décrivez votre projet : contexte, objectifs, technologies utilisées, résultats obtenus…"></textarea>
+
+        <div class="images-section">
+          <span class="field-label">Photos / Captures d'écran</span>
+          <div class="drop-zone"
+               ondragover="dragOver(event)"
+               ondragleave="dragLeave(event)"
+               ondrop="dropImages(event, 'bloc-2')">
+            <input type="file" accept="image/*" multiple
+                   onchange="addImages('bloc-2', this.files)"/>
+            <span class="drop-icon">🖼️</span>
+            <span class="drop-text">Glissez vos images ici ou <em>cliquez pour choisir</em></span>
           </div>
+          <div class="images-grid" id="imgGrid-bloc-2"></div>
         </div>
-        <div class="bloc-toolbar">
-          <button class="tool-btn" onclick="triggerUpload('bloc-2')">📷 Ajouter photo</button>
-          <button class="tool-btn" onclick="addLink('bloc-2')">🔗 Ajouter lien</button>
-          <button class="tool-btn danger" onclick="deleteBloc('bloc-2')">🗑 Supprimer</button>
+
+        <div class="links-section">
+          <span class="field-label">Liens (GitHub, démo, documentation…)</span>
+          <div class="links-list" id="linksList-bloc-2"></div>
+          <button class="add-link-btn" onclick="addLink('bloc-2')">＋ Ajouter un lien</button>
+        </div>
+
+        <div class="bloc-footer">
+          <button class="delete-bloc-btn" onclick="deleteBloc('bloc-2')">🗑 Supprimer ce projet</button>
         </div>
       </div>
     </div>
+    <!-- FIN BLOC 2 -->
 
-    <button class="add-projet-btn" onclick="addBloc()">+ Ajouter un projet</button>
   </div>
 
   <footer>
-    <p>© 2025 — Votre Nom. Tous droits réservés.</p>
+    <p>© 2025 — CHEN Ximeng. Tous droits réservés.</p>
     <a href="mailto:votre@email.com">votre@email.com</a>
   </footer>
 </section>
@@ -901,67 +941,60 @@
 <section class="page" id="veille">
   <div class="veille-layout">
     <div class="section-label">Technologique</div>
-    <h2>Ma Veille</h2><!-- ✏️ -->
+    <h2>Ma Veille</h2>
     <p class="veille-subtitle">
       Suivi régulier des évolutions du secteur informatique : nouvelles technologies,
       frameworks, cybermenaces, tendances du développement et de l'infrastructure.
-      <!-- ✏️ Modifiez ce sous-titre -->
+      <!-- ✏️ -->
     </p>
 
     <div class="veille-grid">
 
-      <!-- ✏️ Carte 1 — dupliquez autant que nécessaire -->
       <div class="veille-card">
-        <div class="veille-card-cat">Intelligence Artificielle</div><!-- ✏️ -->
-        <h3>L'essor des LLM open-source</h3><!-- ✏️ -->
+        <div class="veille-card-cat">Intelligence Artificielle</div>
+        <h3>L'essor des LLM open-source</h3>
         <p>
           En 2024–2025, des modèles comme Mistral, LLaMA 3 ou Gemma ont considérablement
           réduit l'écart avec les solutions propriétaires. Leur intégration dans les pipelines
           de développement logiciel s'accélère, ouvrant la voie à des outils d'aide à la
           programmation plus accessibles.
-          <!-- ✏️ Votre contenu de veille -->
         </p>
-        <div class="veille-card-date">Mise à jour : Janvier 2025</div><!-- ✏️ -->
+        <div class="veille-card-date">Mise à jour : Janvier 2025</div>
       </div>
 
-      <!-- ✏️ Carte 2 -->
       <div class="veille-card">
         <div class="veille-card-cat">Cybersécurité</div>
         <h3>Attaques par supply chain en hausse</h3>
         <p>
           Les cyberattaques visant les chaînes d'approvisionnement logicielles (comme les
           dépendances npm ou PyPI) sont en forte progression. L'ANSSI recommande l'audit
-          régulier des dépendances et l'utilisation de SBOM pour cartographier les
-          composants tiers.
+          régulier des dépendances et l'utilisation de SBOM pour cartographier les composants tiers.
         </p>
         <div class="veille-card-date">Mise à jour : Février 2025</div>
       </div>
 
-      <!-- ✏️ Carte 3 -->
       <div class="veille-card">
         <div class="veille-card-cat">Cloud &amp; Infrastructure</div>
         <h3>Kubernetes et la montée en puissance des plateformes internes</h3>
         <p>
-          Les "Internal Developer Platforms" (IDP) construites sur Kubernetes simplifient
-          l'expérience développeur en abstraisant la complexité de l'infrastructure.
-          Des outils comme Backstage ou Crossplane émergent comme standards de facto.
+          Les "Internal Developer Platforms" construites sur Kubernetes simplifient l'expérience
+          développeur en abstraisant la complexité de l'infrastructure. Des outils comme
+          Backstage ou Crossplane émergent comme standards de facto.
         </p>
         <div class="veille-card-date">Mise à jour : Mars 2025</div>
       </div>
 
-      <!-- ✏️ Carte 4 -->
       <div class="veille-card">
         <div class="veille-card-cat">Développement Web</div>
         <h3>Les Server Components React et le retour au serveur</h3>
         <p>
           React 19 et Next.js 15 marquent un tournant : le rendu côté serveur redevient
-          la norme pour les applications performantes. Cette tendance rapproche le
-          développement front-end des paradigmes classiques du back-end.
+          la norme pour les applications performantes. Cette tendance rapproche le développement
+          front-end des paradigmes classiques du back-end.
         </p>
         <div class="veille-card-date">Mise à jour : Mars 2025</div>
       </div>
 
-      <!-- ✏️ Carte pleine largeur -->
       <div class="veille-card veille-full">
         <div class="veille-card-cat">Synthèse &amp; Sources</div>
         <h3>Mes sources de veille</h3>
@@ -972,7 +1005,6 @@
           (Changelog, CoRecursive), et suivi de la documentation officielle des projets
           open-source qui m'intéressent. Je consulte également régulièrement les publications
           de l'ANSSI et les rapports annuels de Verizon DBIR pour la partie sécurité.
-          <!-- ✏️ Modifiez vos sources -->
         </p>
         <div class="veille-card-date">Mise à jour continue</div>
       </div>
@@ -981,14 +1013,17 @@
   </div>
 
   <footer>
-    <p>© 2025 — Votre Nom. Tous droits réservés.</p>
+    <p>© 2025 — CHEN Ximeng. Tous droits réservés.</p>
     <a href="mailto:votre@email.com">votre@email.com</a>
   </footer>
 </section>
 
 <!-- ══════════════════════════ JAVASCRIPT ══════════════════════════ -->
 <script>
-  // ── Navigation entre pages ──
+
+  /* ─────────────────────────────────────────
+     NAVIGATION
+  ───────────────────────────────────────── */
   function showPage(id, btn) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
@@ -997,104 +1032,138 @@
     window.scrollTo(0, 0);
   }
 
-  // ── Ouvrir / fermer un bloc projet ──
+  /* ─────────────────────────────────────────
+     ACCORDÉON
+  ───────────────────────────────────────── */
   function toggleBloc(id) {
     document.getElementById(id).classList.toggle('open');
   }
 
-  // ── Supprimer un bloc ──
   function deleteBloc(id) {
     if (confirm('Supprimer ce projet ?')) {
+      localStorage.removeItem('projet_' + id);
       document.getElementById(id).remove();
-      renumberBlocs();
     }
   }
 
-  // ── Renuméroter les blocs après suppression ──
-  function renumberBlocs() {
-    const blocs = document.querySelectorAll('.projet-bloc');
-    blocs.forEach((b, i) => {
-      const num = b.querySelector('.projet-num');
-      if (num) num.textContent = String(i + 1).padStart(2, '0');
-    });
+  /* ─────────────────────────────────────────
+     PHOTOS — upload & drag-and-drop
+  ───────────────────────────────────────── */
+  function dragOver(e) {
+    e.preventDefault();
+    e.currentTarget.classList.add('drag-over');
+  }
+  function dragLeave(e) {
+    e.currentTarget.classList.remove('drag-over');
+  }
+  function dropImages(e, blocId) {
+    e.preventDefault();
+    e.currentTarget.classList.remove('drag-over');
+    addImages(blocId, e.dataTransfer.files);
   }
 
-  // ── Ajouter un nouveau bloc ──
-  let blocCounter = 3;
-  function addBloc() {
-    const id = 'bloc-' + blocCounter++;
-    const num = String(document.querySelectorAll('.projet-bloc').length + 1).padStart(2, '0');
-    const html = `
-      <div class="projet-bloc" id="${id}">
-        <div class="projet-header" onclick="toggleBloc('${id}')">
-          <div class="projet-header-left">
-            <span class="projet-num">${num}</span>
-            <input class="projet-title-editable" type="text" value="Nouveau projet" placeholder="Nom du projet"
-                   onclick="event.stopPropagation()"/>
-          </div>
-          <input class="projet-tag" type="text" value="Tag" placeholder="Tag"
-                 onclick="event.stopPropagation()"/>
-          <div class="toggle-icon">+</div>
-        </div>
-        <div class="projet-body">
-          <div class="content-area">
-            <textarea class="content-text" placeholder="Décrivez votre projet ici…"></textarea>
-          </div>
-          <div class="images-row" id="images-${id}">
-            <div class="img-placeholder" onclick="triggerUpload('${id}')">+ Photo</div>
-          </div>
-          <input type="file" accept="image/*" class="hidden-file" id="file-${id}" multiple
-                 onchange="handleImages('${id}', this)"/>
-          <div class="links-section" id="links-${id}">
-            <div class="link-item">
-              <input class="link-input" type="url" placeholder="https://lien-vers-le-projet.com"/>
-            </div>
-          </div>
-          <div class="bloc-toolbar">
-            <button class="tool-btn" onclick="triggerUpload('${id}')">📷 Ajouter photo</button>
-            <button class="tool-btn" onclick="addLink('${id}')">🔗 Ajouter lien</button>
-            <button class="tool-btn danger" onclick="deleteBloc('${id}')">🗑 Supprimer</button>
-          </div>
-        </div>
-      </div>`;
-    const addBtn = document.querySelector('.add-projet-btn');
-    addBtn.insertAdjacentHTML('beforebegin', html);
-    // Ouvrir le nouveau bloc directement
-    setTimeout(() => document.getElementById(id).classList.add('open'), 50);
-  }
-
-  // ── Gestion des images ──
-  function triggerUpload(blocId) {
-    document.getElementById('file-' + blocId).click();
-  }
-
-  function handleImages(blocId, input) {
-    const row = document.getElementById('images-' + blocId);
-    Array.from(input.files).forEach(file => {
+  function addImages(blocId, files) {
+    const grid = document.getElementById('imgGrid-' + blocId);
+    Array.from(files).forEach(file => {
+      if (!file.type.startsWith('image/')) return;
       const reader = new FileReader();
-      reader.onload = e => {
+      reader.onload = ev => {
+        const item = document.createElement('div');
+        item.className = 'img-item';
+
         const img = document.createElement('img');
-        img.src = e.target.result;
-        img.className = 'img-thumb';
-        img.title = 'Cliquer pour supprimer';
-        img.onclick = () => img.remove();
-        // Insert before the placeholder
-        const placeholder = row.querySelector('.img-placeholder');
-        row.insertBefore(img, placeholder);
+        img.src = ev.target.result;
+        img.alt = file.name;
+
+        const btn = document.createElement('button');
+        btn.className = 'img-del';
+        btn.textContent = '✕';
+        btn.title = 'Supprimer cette image';
+        btn.onclick = () => item.remove();
+
+        item.appendChild(img);
+        item.appendChild(btn);
+        grid.appendChild(item);
       };
       reader.readAsDataURL(file);
     });
   }
 
-  // ── Ajouter un champ lien ──
-  function addLink(blocId) {
-    const section = document.getElementById('links-' + blocId);
-    const item = document.createElement('div');
-    item.className = 'link-item';
-    item.innerHTML = `<input class="link-input" type="url" placeholder="https://lien-vers-le-projet.com"/>`;
-    section.appendChild(item);
-    item.querySelector('input').focus();
+  /* ─────────────────────────────────────────
+     LIENS
+  ───────────────────────────────────────── */
+  function addLink(blocId, label, url) {
+    const list = document.getElementById('linksList-' + blocId);
+    const row  = document.createElement('div');
+    row.className = 'link-row';
+    row.innerHTML = `
+      <input class="link-label-input" type="text"
+             value="${escHtml(label || '')}" placeholder="Nom (ex: GitHub)" />
+      <input class="link-url-input" type="url"
+             value="${escHtml(url || '')}" placeholder="https://…" />
+      <button class="link-remove" title="Supprimer ce lien"
+              onclick="this.closest('.link-row').remove()">✕</button>
+    `;
+    list.appendChild(row);
+    if (!label) row.querySelector('.link-label-input').focus();
+    row.querySelectorAll('input').forEach(i => i.addEventListener('input', () => saveBloc(blocId)));
   }
+
+  /* ─────────────────────────────────────────
+     SAUVEGARDE AUTOMATIQUE (texte + liens)
+     Les images ne sont PAS sauvegardées car
+     elles peuvent être très lourdes. Rechargez
+     la page et re-uploadez les photos.
+  ───────────────────────────────────────── */
+  document.addEventListener('input', e => {
+    const bloc = e.target.closest('.projet-bloc');
+    if (bloc) saveBloc(bloc.id);
+  });
+
+  function saveBloc(blocId) {
+    const bloc = document.getElementById(blocId);
+    if (!bloc) return;
+    const data = {
+      title: bloc.querySelector('.projet-title-editable')?.value || '',
+      tag:   bloc.querySelector('.projet-tag')?.value || '',
+      desc:  bloc.querySelector('.content-text')?.value || '',
+      links: []
+    };
+    bloc.querySelectorAll('.link-row').forEach(row => {
+      data.links.push({
+        label: row.querySelector('.link-label-input')?.value || '',
+        url:   row.querySelector('.link-url-input')?.value   || ''
+      });
+    });
+    try { localStorage.setItem('projet_' + blocId, JSON.stringify(data)); } catch(e) {}
+  }
+
+  function restoreBloc(blocId) {
+    let raw;
+    try { raw = localStorage.getItem('projet_' + blocId); } catch(e) { return; }
+    if (!raw) return;
+    try {
+      const d    = JSON.parse(raw);
+      const bloc = document.getElementById(blocId);
+      if (!bloc) return;
+      if (d.title) bloc.querySelector('.projet-title-editable').value = d.title;
+      if (d.tag)   bloc.querySelector('.projet-tag').value            = d.tag;
+      if (d.desc)  bloc.querySelector('.content-text').value          = d.desc;
+      (d.links || []).forEach(l => addLink(blocId, l.label, l.url));
+    } catch(e) {}
+  }
+
+  function escHtml(s) {
+    return String(s)
+      .replace(/&/g,'&amp;')
+      .replace(/"/g,'&quot;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;');
+  }
+
+  // Restaurer toutes les données au chargement de la page
+  document.querySelectorAll('.projet-bloc').forEach(b => restoreBloc(b.id));
+
 </script>
 </body>
 </html>
